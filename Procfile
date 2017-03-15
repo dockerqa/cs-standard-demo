@@ -1,1 +1,1 @@
-web: python manage.py runserver 0.0.0.0:5000
+web: export FLASK_APP=flaskr && flask initdb && flask run
