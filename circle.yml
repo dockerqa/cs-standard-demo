@@ -9,8 +9,10 @@ dependencies:
         - pip install -e .
 
 test:
+    pre:
+        - mkdir -p $CIRCLE_TEST_REPORTS/pytest
     override:
-        - pytest --cov=flaskr tests/
+        - pytest --junitxml=$CIRCLE_TEST_REPORTS/pytest/junit.xml --cov=flaskr tests/
     post:
         - mkdir $CIRCLE_ARTIFACTS/coverage
         - coverage html
