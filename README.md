@@ -1,4 +1,6 @@
-# Docker to AWS
+# CircleCI Standard Demo
+
+[![CI](https://circleci.com/gh/circleci/cs-standard-demo.svg?style=shield)](https://circleci.com/gh/circleci/cs-standard-demo)
 
 This is a sample Flask app that is deployed to Heroku using CircleCI
 
