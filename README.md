@@ -7,6 +7,6 @@ This is a sample Flask app that is deployed to Heroku using CircleCI
 ## Steps
 
 1. Checkout Code
-2. Run Tests
-3. Build Docker Container
+2. Install Dependencies
+3. Run Tests
 4. Deploy to Heroku 
