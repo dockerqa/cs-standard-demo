@@ -7,11 +7,14 @@ machine:
 dependencies:
     override:
         - pip install .
-        - pip install pytest
 
 test:
     override:
-        - python setup.py test
+        - pytest --cov=flaskr tests/
+    post:
+        - mkdir $CIRCLE_ARTIFACTS/coverage
+        - coverage html
+        - mv htmlcov $CIRCLE_ARTIFACTS/coverage
 
 deployment:
     master:

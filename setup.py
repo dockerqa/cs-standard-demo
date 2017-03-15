@@ -6,11 +6,9 @@ setup(
     include_package_data=True,
     install_requires=[
         'flask',
-    ],
-    setup_requires=[
-        'pytest-runner',
-    ],
-    tests_require=[
+        'coverage',
         'pytest',
+        'pytest-cov',
+        'pytest-runner',
     ],
 )
