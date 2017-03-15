@@ -6,7 +6,7 @@ machine:
 
 dependencies:
     override:
-        - pip install .
+        - pip install -e .
 
 test:
     override:
