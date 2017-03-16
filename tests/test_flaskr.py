@@ -45,7 +45,7 @@ def logout(client):
 def test_empty_db(client):
     """Start with a blank database."""
     rv = client.get('/')
-    assert b'Pproduction' in rv.data
+    assert b'production' in rv.data
 
 
 def test_login_logout(client):
