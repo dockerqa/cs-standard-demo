@@ -9,7 +9,7 @@ jobs:
       CIRCLE_ARTIFACTS: circle-artifacts
     steps:
       - checkout
-      - run: pip install -e .
+      - run: sudo pip install -e .
       - run: mkdir -p $CIRCLE_TEST_REPORTS/pytest $CIRCLE_ARTIFACTS/coverage
       - run: pytest --junitxml=$CIRCLE_TEST_REPORTS/pytest/junit.xml --cov=flaskr tests/
       - run: coverage html
