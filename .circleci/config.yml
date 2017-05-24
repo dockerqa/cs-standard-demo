@@ -1,0 +1,21 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: cirlceci/python:2.7.13
+    working_directory: ~/demo
+    environment:
+      CIRCLE_TEST_REPORTS: test-results
+      CIRCLE_ARTIFACTS: circle-artifacts
+    steps:
+      - checkout
+      - run: pip install -e .
+      - run: mkdir -p $CIRCLE_TEST_REPORTS/pytest $CIRCLE_ARTIFACTS/coverage
+      - run: pytest --junitxml=$CIRCLE_TEST_REPORTS/pytest/junit.xml --cov=flaskr tests/
+      - run: coverage html
+      - run: mv htmlcov $CIRCLE_ARTIFACTS/coverage
+      - store_artifacts:
+          path: circle-artifacts
+          destination: circle-artifacts
+      - store_test_results:
+          path: test-results
