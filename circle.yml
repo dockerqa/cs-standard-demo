@@ -10,8 +10,8 @@ test:
     pre:
         - mkdir -p $CIRCLE_TEST_REPORTS/pytest
         - mkdir $CIRCLE_ARTIFACTS/coverage
-#    override:
-#        - pytest --junitxml=$CIRCLE_TEST_REPORTS/pytest/junit.xml --cov=flaskr tests/
+    override:
+        - pytest --junitxml=$CIRCLE_TEST_REPORTS/pytest/junit.xml --cov=flaskr tests/
     post:
         - coverage html
         - mv htmlcov $CIRCLE_ARTIFACTS/coverage
