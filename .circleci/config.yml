@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: cirlceci/python:2.7.13
+      - image: circleci/python:2.7.13
     working_directory: ~/demo
     environment:
       CIRCLE_TEST_REPORTS: test-results
