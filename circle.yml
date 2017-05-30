@@ -15,9 +15,3 @@ test:
     post:
         - coverage html
         - mv htmlcov $CIRCLE_ARTIFACTS/coverage
-
-deployment:
-    master:
-        branch: master
-        heroku:
-            appname: cs-standard-demo
